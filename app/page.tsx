@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col flex-1 items-center w-full">
-      <main className="w-full max-w-3xl px-6 sm:px-10 py-12 sm:py-16 flex flex-col gap-12 sm:gap-16">
+      <main className="w-full max-w-3xl px-6 sm:px-10 py-12 sm:py-16 flex flex-col gap-8 sm:gap-12">
         {/* Hero */}
         <header className="flex flex-col gap-7 fade-up">
           <div className="flex flex-col gap-5">
