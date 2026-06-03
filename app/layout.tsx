@@ -13,9 +13,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sam Freeman — HQ",
+  metadataBase: new URL("https://samfreeman.org"),
+  title: {
+    default: "Sam Freeman — HQ",
+    template: "%s",
+  },
   description:
     "Sam Freeman's hub: FLAIR, CampusLink, MTRNM, Stealth Labs, and more.",
+  openGraph: {
+    title: "Sam Freeman — HQ",
+    description: "Building across global events, marketing, and AI.",
+    url: "https://samfreeman.org",
+    siteName: "Sam Freeman HQ",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sam Freeman — HQ",
+    description: "Building across global events, marketing, and AI.",
+  },
 };
 
 export default function RootLayout({
