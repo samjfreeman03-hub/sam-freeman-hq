@@ -79,7 +79,7 @@ export const profiles: Profile[] = [
       { kind: "instagram", href: "https://www.instagram.com/flairdidthat" },
       { kind: "linkedin", href: "https://www.linkedin.com/company/the-flair-collective" },
     ],
-    logo: { src: "/logos/flair.png", bg: "#ffffff", padding: "14%" },
+    logo: { src: "/logos/flair.png", bg: "#ffffff" },
     resources: [],
     childrenLabel: "subsidiaries",
     children: [
