@@ -114,20 +114,20 @@ export const profiles: Profile[] = [
           },
           {
             slug: "next-gen",
-            name: "FLAIR Next-Gen",
+            name: "FLAIR College/Next-Gen",
             tagline: "At the heart of college, next-gen, and culture.",
             socials: [],
             resources: [
               {
                 items: [
                   {
-                    label: "FLAIR Next-Gen Deck",
+                    label: "FLAIR College/Next-Gen Deck",
                     href: "https://www.canva.com/design/DAHEvvjMNbg/_a5bS2jeeb90KSqi1hSpPg/view?utm_content=DAHEvvjMNbg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hade886e86a",
                   },
                 ],
               },
               {
-                title: "FLAIR Next-Gen Case Studies",
+                title: "FLAIR College/Next-Gen Case Studies",
                 items: [
                   {
                     label: "FLAIR x Coca-Cola",

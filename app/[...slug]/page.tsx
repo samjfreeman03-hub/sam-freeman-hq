@@ -39,9 +39,9 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
     <div className="flex flex-col flex-1 items-center w-full">
       <main className="w-full max-w-3xl px-6 sm:px-10 py-10 sm:py-14 flex flex-col gap-7 sm:gap-9">
         {/* Top bar */}
-        <div className="flex items-center justify-between fade-up">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 fade-up">
           <Monogram />
-          <nav className="label flex items-center gap-2 flex-wrap" aria-label="Breadcrumb">
+          <nav className="label flex items-center gap-2 flex-wrap min-w-0" aria-label="Breadcrumb">
             <Link href="/" style={{ color: "var(--muted)" }} className="hover:text-foreground transition-colors">
               HQ
             </Link>
