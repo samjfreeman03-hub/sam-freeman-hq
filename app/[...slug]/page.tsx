@@ -91,7 +91,7 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
         {hasChildren && (
           <section className="flex flex-col gap-5">
             <div className="flex items-baseline justify-between">
-              <div className="label">Brands</div>
+              <div className="label">{profile.childrenLabel ?? "Brands"}</div>
               <div className="label" style={{ color: "var(--subtle)" }}>
                 {String(profile.children!.length).padStart(2, "0")}
               </div>

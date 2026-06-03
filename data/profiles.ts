@@ -34,12 +34,14 @@ export type Profile = {
   socials: Social[];
   resources: ResourceGroup[];
   children?: Profile[];
+  /** Label for the children section (e.g. "brands", "subsidiaries"). Defaults to "brands". */
+  childrenLabel?: string;
   hiddenOnHQ?: boolean;
 };
 
 export const personal = {
   name: "Sam Freeman",
-  intro: "Building across music, marketing, and AI.",
+  intro: "Building across events, marketing, and AI.",
   socials: [
     { kind: "instagram" as const, href: "https://www.instagram.com/sam_.f" },
     { kind: "linkedin" as const, href: "https://www.linkedin.com/in/samjfreeman1/" },
@@ -67,6 +69,7 @@ export const profiles: Profile[] = [
       { kind: "linkedin", href: "https://www.linkedin.com/company/the-flair-collective" },
     ],
     resources: [],
+    childrenLabel: "subsidiaries",
     children: [
       {
         slug: "marketing",
@@ -100,7 +103,7 @@ export const profiles: Profile[] = [
           {
             slug: "next-gen",
             name: "FLAIR Next-Gen",
-            tagline: "Next-generation campaigns and case studies",
+            tagline: "At the heart of college, next-gen, and culture.",
             socials: [],
             resources: [
               {
@@ -142,7 +145,7 @@ export const profiles: Profile[] = [
         name: "CampusLink",
         tagline: "FLAIR's college marketing platform",
         description:
-          "Connecting brands with college students through a network of campus ambassadors.",
+          "FLAIR's college marketing tech platform connecting brands with college nationwide.",
         website: { label: "joincampuslink.com", href: "https://joincampuslink.com" },
         socials: [
           { kind: "instagram", href: "https://www.instagram.com/joincampuslink" },
@@ -174,7 +177,8 @@ export const profiles: Profile[] = [
     slug: "mtrnm",
     name: "MTRNM",
     tagline: "House music events.",
-    description: "A house music brand and event series.",
+    description:
+      "MTRNM is a global house music platform that combines curated live experiences with a media engine and brand ecosystem, operating as an events label, cultural curator, and lifestyle brand.",
     website: { label: "mtrnm.co", href: "https://www.mtrnm.co" },
     socials: [
       { kind: "instagram", href: "https://www.instagram.com/mtrnm_" },
@@ -196,6 +200,37 @@ export const profiles: Profile[] = [
             href: "https://canva.link/zkzck3br8ca96a8",
           },
           methodOasisRecap,
+        ],
+      },
+      {
+        title: "Our Best Events",
+        items: [
+          {
+            label: "Mountains of Malibu",
+            href: "https://www.instagram.com/reels/DKicdbcS1KQ/",
+          },
+          {
+            label: "Natural History Museum of Los Angeles",
+            href: "https://www.instagram.com/reels/DJLECY6vyL8/",
+            note: "MTRNM's “Night At The Museum” debut",
+          },
+          {
+            label: "Natural History Museum of London",
+            href: "https://www.instagram.com/p/DYP0KPvkUfX/?igsh=NTc4MTIwNjQ2YQ%3D%3D",
+          },
+          {
+            label: "Surrogates Courthouse — Manhattan, NYC",
+            href: "https://www.instagram.com/p/DWm5T51mFml/?igsh=NTc4MTIwNjQ2YQ%3D%3D",
+          },
+          {
+            label: "method oasis afterparty @ Coachella",
+            href: "https://www.instagram.com/p/DXKIPYtlbIB/?igsh=NTc4MTIwNjQ2YQ==",
+            note: "with method & Ulta Beauty",
+          },
+          {
+            label: "The Dead Sea — Amman, Jordan",
+            href: "https://www.instagram.com/p/DNlM_CFoe_y/?igsh=NTc4MTIwNjQ2YQ==",
+          },
         ],
       },
     ],

@@ -55,7 +55,7 @@ export default function Home() {
                         </span>
                         {p.children?.length ? (
                           <span className="label">
-                            {String(p.children.length).padStart(2, "0")} {p.children.length === 1 ? "brand" : "brands"}
+                            {String(p.children.length).padStart(2, "0")} {p.childrenLabel ?? (p.children.length === 1 ? "brand" : "brands")}
                           </span>
                         ) : null}
                       </div>
