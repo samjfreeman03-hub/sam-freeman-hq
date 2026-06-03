@@ -45,6 +45,7 @@ export const personal = {
   socials: [
     { kind: "instagram" as const, href: "https://www.instagram.com/sam_.f" },
     { kind: "linkedin" as const, href: "https://www.linkedin.com/in/samjfreeman1/" },
+    { kind: "email" as const, href: "mailto:sam@theflaircollective.com" },
   ],
 };
 
