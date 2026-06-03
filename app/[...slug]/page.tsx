@@ -30,7 +30,7 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
   if (!profile) notFound();
 
   const ancestors = getAncestors(slug);
-  const hasResources = profile.resources.length > 0;
+  const resourceGroups = profile.resources.filter((g) => g.items.length > 0);
   const hasChildren = (profile.children?.length ?? 0) > 0;
 
   return (
@@ -108,13 +108,13 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
           </section>
         )}
 
-        {hasResources && (
-          <section className="flex flex-col gap-3">
+        {resourceGroups.map((group, idx) => (
+          <section key={group.title ?? `group-${idx}`} className="flex flex-col gap-3">
             <div className="text-xs uppercase tracking-[0.18em] text-muted mb-2">
-              Resources
+              {group.title ?? "Resources"}
             </div>
             <ul className="flex flex-col gap-2">
-              {profile.resources.map((r) => (
+              {group.items.map((r) => (
                 <li key={r.label}>
                   <a
                     href={r.href}
@@ -134,7 +134,7 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
               ))}
             </ul>
           </section>
-        )}
+        ))}
 
         <footer className="pt-6 border-t border-[var(--hairline)] text-xs text-muted flex items-center justify-between">
           <Link href="/" className="hover:text-foreground transition-colors">

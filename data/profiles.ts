@@ -19,6 +19,11 @@ export type Resource = {
   note?: string;
 };
 
+export type ResourceGroup = {
+  title?: string;
+  items: Resource[];
+};
+
 export type Profile = {
   slug: string;
   name: string;
@@ -27,7 +32,7 @@ export type Profile = {
   description?: string;
   website?: { label: string; href: string };
   socials: Social[];
-  resources: Resource[];
+  resources: ResourceGroup[];
   children?: Profile[];
   hiddenOnHQ?: boolean;
 };
@@ -41,6 +46,13 @@ export const personal = {
   ],
 };
 
+// Shared resource — appears under both FLAIR Next-Gen and MTRNM
+const methodOasisRecap: Resource = {
+  label: "method oasis Recap Deck",
+  href: "https://www.canva.com/design/DAHHkeoN3xo/hXP9G-uB661W-JuurynxoQ/view",
+  note: "Coachella with method & Ulta Beauty",
+};
+
 export const profiles: Profile[] = [
   {
     slug: "flair",
@@ -48,7 +60,7 @@ export const profiles: Profile[] = [
     shortName: "FLAIR",
     tagline: "The Flair Collective",
     description:
-      "A marketing collective and parent company to CampusLink, FLAIR Concierge, and FLAIR Wholesale.",
+      "A marketing collective and parent company to CampusLink, FLAIR Concierge, FLAIR Wholesale, and FLAIR's marketing practice.",
     website: { label: "theflaircollective.com", href: "https://theflaircollective.com" },
     socials: [
       { kind: "instagram", href: "https://www.instagram.com/flairdidthat" },
@@ -56,6 +68,75 @@ export const profiles: Profile[] = [
     ],
     resources: [],
     children: [
+      {
+        slug: "marketing",
+        name: "FLAIR Marketing",
+        tagline: "FLAIR's marketing practice",
+        description:
+          "FLAIR's marketing arm — campaign work and next-generation activations.",
+        socials: [],
+        resources: [],
+        children: [
+          {
+            slug: "flair-marketing",
+            name: "FLAIR Marketing",
+            tagline: "Decks and sponsorships",
+            socials: [],
+            resources: [
+              {
+                items: [
+                  {
+                    label: "FLAIR Marketing Deck",
+                    href: "https://www.canva.com/design/DAHG5rlUg_8/J1P3uaq_MG8Up1vIvIFxPQ/view?utm_content=DAHG5rlUg_8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2c8f57f4a1",
+                  },
+                  {
+                    label: "FLAIR x Equinox Run — Sponsorship Deck",
+                    href: "https://www.canva.com/design/DAHKosoPxWQ/qU3hQx-J_V_wl0wuAlcmiw/view?utm_content=DAHKosoPxWQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hef6b7239f7#1",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            slug: "next-gen",
+            name: "FLAIR Next-Gen",
+            tagline: "Next-generation campaigns and case studies",
+            socials: [],
+            resources: [
+              {
+                items: [
+                  {
+                    label: "FLAIR Next-Gen Deck",
+                    href: "https://www.canva.com/design/DAHEvvjMNbg/_a5bS2jeeb90KSqi1hSpPg/view?utm_content=DAHEvvjMNbg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hade886e86a",
+                  },
+                ],
+              },
+              {
+                title: "FLAIR Next-Gen Case Studies",
+                items: [
+                  {
+                    label: "FLAIR x Coca-Cola",
+                    href: "https://www.canva.com/design/DAGWNl9_akg/tj5HQynojoERC47V2aPjTw/view?utm_content=DAGWNl9_akg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h86867bdb5e",
+                  },
+                  {
+                    label: "FLAIR x Monster Energy",
+                    href: "https://www.canva.com/design/DAGHHHFbKiA/YsFw0cAfWrQ2Sp1QqWrsVw/view?utm_content=DAGHHHFbKiA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7689cd47e4#1",
+                  },
+                  {
+                    label: "FLAIR x Real American Beer",
+                    href: "https://drive.google.com/file/d/1dEwxQ9kcBg3RkqbF_psn9kq3nPy9bbvY/view",
+                  },
+                  {
+                    label: "FLAIR x WOW Media",
+                    href: "https://www.canva.com/design/DAGpLWLLx_k/2hFP3hOzYjE_v9rxJUey7Q/view?utm_content=DAGpLWLLx_k&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he9b4670336",
+                  },
+                  methodOasisRecap,
+                ],
+              },
+            ],
+          },
+        ],
+      },
       {
         slug: "campuslink",
         name: "CampusLink",
@@ -100,9 +181,23 @@ export const profiles: Profile[] = [
       { kind: "linkedin", href: "https://www.linkedin.com/company/mtrnm" },
     ],
     resources: [
-      // Add when ready:
-      // { label: "Partnerships Deck", href: "" },
-      // { label: "Press Kit", href: "" },
+      {
+        items: [
+          {
+            label: "MTRNM Press Kit",
+            href: "https://www.canva.com/design/DAGl1YiBte8/uiLl_aUFG6DEB4IVfC4szA/view",
+          },
+          {
+            label: "MTRNM Partnerships Deck",
+            href: "https://www.canva.com/design/DAGt_oIo3BY/StFczSkMjwUX9Rdv8Gj3QA/view#1",
+          },
+          {
+            label: "“Night At The Museum” Concept Deck",
+            href: "https://canva.link/zkzck3br8ca96a8",
+          },
+          methodOasisRecap,
+        ],
+      },
     ],
   },
   {
