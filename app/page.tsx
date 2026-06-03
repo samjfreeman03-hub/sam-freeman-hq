@@ -9,10 +9,10 @@ export default function Home() {
 
   return (
     <div className="flex flex-col flex-1 items-center w-full">
-      <main className="w-full max-w-3xl px-6 sm:px-10 py-12 sm:py-16 flex flex-col gap-8 sm:gap-12">
+      <main className="w-full max-w-3xl px-6 sm:px-10 py-10 sm:py-14 flex flex-col gap-6 sm:gap-8">
         {/* Hero */}
-        <header className="flex flex-col gap-7 fade-up">
-          <div className="flex flex-col gap-5">
+        <header className="flex flex-col gap-5 fade-up">
+          <div className="flex flex-col gap-4">
             <div className="avatar-wrap">
               <Image
                 src="/profile.png"
@@ -47,7 +47,7 @@ export default function Home() {
         </header>
 
         {/* Ventures */}
-        <section className="flex flex-col gap-3">
+        <section className="flex flex-col gap-2.5">
           <div className="flex items-baseline justify-between">
             <div className="label">Ventures</div>
             <div className="label" style={{ color: "var(--subtle)" }}>
