@@ -24,6 +24,15 @@ export type ResourceGroup = {
   items: Resource[];
 };
 
+export type Logo = {
+  src: string;
+  /** Tile background color — used as the surface behind the logo image.
+   *  Set to match the logo's native background to avoid visible letterbox. */
+  bg: string;
+  /** Optional padding inside the tile (% of tile size) for logos that need breathing room. */
+  padding?: string;
+};
+
 export type Profile = {
   slug: string;
   name: string;
@@ -33,6 +42,7 @@ export type Profile = {
   website?: { label: string; href: string };
   socials: Social[];
   resources: ResourceGroup[];
+  logo?: Logo;
   children?: Profile[];
   /** Label for the children section (e.g. "brands", "subsidiaries"). Defaults to "brands". */
   childrenLabel?: string;
@@ -69,6 +79,7 @@ export const profiles: Profile[] = [
       { kind: "instagram", href: "https://www.instagram.com/flairdidthat" },
       { kind: "linkedin", href: "https://www.linkedin.com/company/the-flair-collective" },
     ],
+    logo: { src: "/logos/flair.png", bg: "#ffffff", padding: "14%" },
     resources: [],
     childrenLabel: "subsidiaries",
     children: [
@@ -185,6 +196,7 @@ export const profiles: Profile[] = [
       { kind: "instagram", href: "https://www.instagram.com/mtrnm_" },
       { kind: "linkedin", href: "https://www.linkedin.com/company/mtrnm" },
     ],
+    logo: { src: "/logos/mtrnm.jpg", bg: "#1c4630" },
     resources: [
       {
         items: [
@@ -243,6 +255,7 @@ export const profiles: Profile[] = [
     description: "Building AI-native products and tools.",
     website: { label: "stealth-labs.ai", href: "https://stealth-labs.ai" },
     socials: [],
+    logo: { src: "/logos/stealth-labs.png", bg: "#000000" },
     resources: [],
   },
 ];

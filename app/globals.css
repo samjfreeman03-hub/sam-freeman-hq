@@ -146,6 +146,52 @@ body {
   transform: translateY(-1px);
 }
 
+/* Logo tile — rounded-square brand mark, sits like an app icon */
+.logo-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px var(--hairline),
+    0 1px 2px rgba(17, 17, 17, 0.04);
+  flex-shrink: 0;
+  transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card:hover .logo-tile,
+.card-quiet:hover .logo-tile {
+  box-shadow:
+    0 0 0 1px var(--hairline-strong),
+    0 4px 10px -4px rgba(17, 17, 17, 0.1);
+}
+
+.logo-tile-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.logo-tile-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* Larger radius for the hero-size logo tile on profile pages */
+.logo-tile-hero {
+  border-radius: 20px;
+}
+
 /* Profile avatar (circular hero portrait) + UCLA badge */
 .avatar-wrap {
   position: relative;

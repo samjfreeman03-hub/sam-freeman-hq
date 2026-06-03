@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { personal, profiles } from "@/data/profiles";
 import { SocialIcons } from "./components/SocialIcons";
+import { LogoTile } from "./components/LogoTile";
 
 export default function Home() {
   const featured = profiles.filter((p) => !p.hiddenOnHQ);
@@ -58,10 +59,13 @@ export default function Home() {
               <li key={p.slug}>
                 <Link
                   href={`/${p.slug}`}
-                  className="card group block px-6 py-6 sm:px-8 sm:py-7"
+                  className="card group block px-5 py-5 sm:px-7 sm:py-6"
                 >
-                  <div className="flex items-start justify-between gap-4 sm:gap-6">
-                    <div className="flex flex-col gap-2 min-w-0">
+                  <div className="flex items-center gap-4 sm:gap-5">
+                    {p.logo && (
+                      <LogoTile logo={p.logo} alt={`${p.name} logo`} size={60} />
+                    )}
+                    <div className="flex flex-col gap-1.5 min-w-0 flex-1">
                       <div className="flex items-baseline gap-3 flex-wrap">
                         <span className="display text-2xl sm:text-3xl font-medium tracking-tight break-words">
                           {p.name}
@@ -76,7 +80,7 @@ export default function Home() {
                         {p.tagline}
                       </div>
                     </div>
-                    <span className="arrow text-subtle shrink-0 mt-2 text-lg" aria-hidden>
+                    <span className="arrow text-subtle shrink-0 text-lg" aria-hidden>
                       ↗
                     </span>
                   </div>

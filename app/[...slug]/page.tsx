@@ -8,6 +8,7 @@ import {
 } from "@/data/profiles";
 import { SocialIcons } from "../components/SocialIcons";
 import { Monogram } from "../components/Monogram";
+import { LogoTile } from "../components/LogoTile";
 
 export function generateStaticParams() {
   return allProfilePaths().map((slug) => ({ slug }));
@@ -62,6 +63,14 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
 
         {/* Hero */}
         <header className="flex flex-col gap-6 fade-up" style={{ animationDelay: "80ms" }}>
+          {profile.logo && (
+            <LogoTile
+              logo={profile.logo}
+              alt={`${profile.name} logo`}
+              size={88}
+              className="logo-tile-hero"
+            />
+          )}
           <h1 className="display text-[38px] sm:text-5xl md:text-6xl font-medium text-foreground break-words">
             {profile.name}
           </h1>
