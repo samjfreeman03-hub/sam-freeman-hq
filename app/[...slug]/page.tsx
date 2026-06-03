@@ -84,7 +84,11 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
                 <span className="arrow" aria-hidden>↗</span>
               </a>
             )}
-            <SocialIcons socials={profile.socials} />
+            {profile.socials.length > 0 && (
+              <div className="flex flex-wrap items-center gap-2">
+                <SocialIcons socials={profile.socials} />
+              </div>
+            )}
           </div>
         </header>
 

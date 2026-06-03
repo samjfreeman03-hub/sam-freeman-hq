@@ -60,10 +60,10 @@ const labels: Record<SocialKind, string> = {
   email: "Email",
 };
 
+/** Renders social icons as siblings — wrap in a flex container in the parent. */
 export function SocialIcons({ socials }: { socials: Social[] }) {
-  if (!socials.length) return null;
   return (
-    <div className="flex flex-wrap gap-2">
+    <>
       {socials.map((s) => (
         <a
           key={`${s.kind}-${s.href}`}
@@ -77,6 +77,6 @@ export function SocialIcons({ socials }: { socials: Social[] }) {
           <Icon kind={s.kind} />
         </a>
       ))}
-    </div>
+    </>
   );
 }

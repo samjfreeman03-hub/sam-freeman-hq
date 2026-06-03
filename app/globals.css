@@ -146,6 +146,76 @@ body {
   transform: translateY(-1px);
 }
 
+/* Profile avatar (circular hero portrait) */
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: 50% 25%;
+  box-shadow:
+    0 0 0 1px var(--hairline-strong),
+    0 8px 24px -16px rgba(17, 17, 17, 0.18);
+  background: var(--surface);
+}
+
+@media (min-width: 640px) {
+  .profile-avatar {
+    width: 112px;
+    height: 112px;
+  }
+}
+
+/* UCLA Alum pill — blue accent, sized to match icon-link row height */
+.ucla-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: #2774ae;
+  color: #ffffff;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
+}
+
+.ucla-pill:hover {
+  background: #1d5e8d;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px -10px rgba(39, 116, 174, 0.55);
+}
+
+.ucla-mark {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.ucla-divider {
+  opacity: 0.55;
+  font-size: 11px;
+}
+
+.ucla-alum {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .ucla-pill {
+    height: 40px;
+  }
+}
+
 /* Monogram mark */
 .monogram {
   display: inline-flex;

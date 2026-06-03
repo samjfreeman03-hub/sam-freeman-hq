@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { personal, profiles } from "@/data/profiles";
 import { SocialIcons } from "./components/SocialIcons";
 import { Monogram } from "./components/Monogram";
+import { UCLAPill } from "./components/UCLAPill";
 
 export default function Home() {
   const featured = profiles.filter((p) => !p.hiddenOnHQ);
@@ -16,15 +18,26 @@ export default function Home() {
 
         {/* Hero */}
         <header className="flex flex-col gap-7 fade-up" style={{ animationDelay: "80ms" }}>
-          <div className="label">Sam Freeman — HQ</div>
+          <div className="flex flex-col gap-5">
+            <Image
+              src="/profile.png"
+              alt="Sam Freeman"
+              width={256}
+              height={256}
+              priority
+              className="profile-avatar"
+            />
+            <div className="label">Sam Freeman — HQ</div>
+          </div>
           <h1 className="display text-[44px] sm:text-6xl md:text-7xl font-medium text-foreground break-words">
             Sam Freeman.
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-muted max-w-xl leading-relaxed">
             {personal.intro}
           </p>
-          <div className="pt-3">
+          <div className="pt-3 flex flex-wrap items-center gap-2">
             <SocialIcons socials={personal.socials} />
+            <UCLAPill />
           </div>
         </header>
 
