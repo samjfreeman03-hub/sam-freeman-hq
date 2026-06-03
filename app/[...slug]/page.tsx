@@ -7,6 +7,7 @@ import {
   getAncestors,
 } from "@/data/profiles";
 import { SocialIcons } from "../components/SocialIcons";
+import { Monogram } from "../components/Monogram";
 
 export function generateStaticParams() {
   return allProfilePaths().map((slug) => ({ slug }));
@@ -35,28 +36,33 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
 
   return (
     <div className="flex flex-col flex-1 items-center w-full">
-      <main className="w-full max-w-3xl px-6 sm:px-10 py-16 sm:py-20 flex flex-col gap-14">
-        <nav className="text-xs uppercase tracking-[0.18em] text-muted flex items-center gap-2 flex-wrap">
-          <Link href="/" className="hover:text-foreground transition-colors">
-            HQ
-          </Link>
-          {ancestors.map((a, i) => {
-            const href = "/" + slug.slice(0, i + 1).join("/");
-            return (
-              <span key={a.slug} className="flex items-center gap-2">
-                <span aria-hidden>/</span>
-                <Link href={href} className="hover:text-foreground transition-colors">
-                  {a.name}
-                </Link>
-              </span>
-            );
-          })}
-          <span aria-hidden>/</span>
-          <span className="text-foreground">{profile.name}</span>
-        </nav>
+      <main className="w-full max-w-3xl px-6 sm:px-10 py-12 sm:py-16 flex flex-col gap-16">
+        {/* Top bar */}
+        <div className="flex items-center justify-between fade-up">
+          <Monogram />
+          <nav className="label flex items-center gap-2 flex-wrap" aria-label="Breadcrumb">
+            <Link href="/" style={{ color: "var(--muted)" }} className="hover:text-foreground transition-colors">
+              HQ
+            </Link>
+            {ancestors.map((a, i) => {
+              const href = "/" + slug.slice(0, i + 1).join("/");
+              return (
+                <span key={a.slug} className="flex items-center gap-2">
+                  <span aria-hidden style={{ color: "var(--subtle)" }}>·</span>
+                  <Link href={href} style={{ color: "var(--muted)" }} className="hover:text-foreground transition-colors">
+                    {a.name}
+                  </Link>
+                </span>
+              );
+            })}
+            <span aria-hidden style={{ color: "var(--subtle)" }}>·</span>
+            <span style={{ color: "var(--foreground)" }}>{profile.name}</span>
+          </nav>
+        </div>
 
-        <header className="flex flex-col gap-5">
-          <h1 className="text-4xl sm:text-5xl font-medium tracking-tight leading-[1.05]">
+        {/* Hero */}
+        <header className="flex flex-col gap-6 fade-up" style={{ animationDelay: "80ms" }}>
+          <h1 className="display text-5xl sm:text-6xl font-medium text-foreground">
             {profile.name}
           </h1>
           <p className="text-lg text-muted max-w-xl leading-relaxed">
@@ -68,7 +74,11 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
                 href={profile.website.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-arrow inline-flex items-center gap-1.5 text-sm font-medium border-b border-[var(--hairline-strong)] pb-0.5 hover:border-foreground transition-colors"
+                className="link-arrow inline-flex items-center gap-1.5 text-sm font-medium"
+                style={{
+                  borderBottom: "1px solid var(--hairline-strong)",
+                  paddingBottom: "2px",
+                }}
               >
                 {profile.website.label}
                 <span className="arrow" aria-hidden>↗</span>
@@ -79,26 +89,29 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
         </header>
 
         {hasChildren && (
-          <section className="flex flex-col gap-3">
-            <div className="text-xs uppercase tracking-[0.18em] text-muted mb-2">
-              Brands
+          <section className="flex flex-col gap-5">
+            <div className="flex items-baseline justify-between">
+              <div className="label">Brands</div>
+              <div className="label" style={{ color: "var(--subtle)" }}>
+                {String(profile.children!.length).padStart(2, "0")}
+              </div>
             </div>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-3 stagger">
               {profile.children!.map((c) => {
                 const childPath = "/" + [...slug, c.slug].join("/");
                 return (
                   <li key={c.slug}>
-                    <Link href={childPath} className="card group block px-6 py-5">
+                    <Link href={childPath} className="card-quiet group block px-6 py-5">
                       <div className="flex items-start justify-between gap-6">
                         <div className="flex flex-col gap-1 min-w-0">
-                          <span className="text-lg font-medium tracking-tight">
+                          <span className="display text-xl sm:text-2xl font-medium">
                             {c.name}
                           </span>
                           <span className="text-sm text-muted leading-relaxed">
                             {c.tagline}
                           </span>
                         </div>
-                        <span className="arrow text-muted shrink-0 mt-1" aria-hidden>↗</span>
+                        <span className="arrow text-subtle shrink-0 mt-1.5" aria-hidden>↗</span>
                       </div>
                     </Link>
                   </li>
@@ -109,18 +122,24 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
         )}
 
         {resourceGroups.map((group, idx) => (
-          <section key={group.title ?? `group-${idx}`} className="flex flex-col gap-3">
-            <div className="text-xs uppercase tracking-[0.18em] text-muted mb-2">
-              {group.title ?? "Resources"}
+          <section
+            key={group.title ?? `group-${idx}`}
+            className="flex flex-col gap-5"
+          >
+            <div className="flex items-baseline justify-between">
+              <div className="label">{group.title ?? "Resources"}</div>
+              <div className="label" style={{ color: "var(--subtle)" }}>
+                {String(group.items.length).padStart(2, "0")}
+              </div>
             </div>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2 stagger">
               {group.items.map((r) => (
                 <li key={r.label}>
                   <a
                     href={r.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="card group flex items-center justify-between gap-6 px-5 py-4"
+                    className="card-quiet group flex items-center justify-between gap-6 px-5 py-4"
                   >
                     <div className="flex flex-col gap-0.5 min-w-0">
                       <span className="text-base font-medium">{r.label}</span>
@@ -128,7 +147,7 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
                         <span className="text-xs text-muted">{r.note}</span>
                       )}
                     </div>
-                    <span className="arrow text-muted shrink-0" aria-hidden>↗</span>
+                    <span className="arrow text-subtle shrink-0" aria-hidden>↗</span>
                   </a>
                 </li>
               ))}
@@ -136,11 +155,14 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
           </section>
         ))}
 
-        <footer className="pt-6 border-t border-[var(--hairline)] text-xs text-muted flex items-center justify-between">
-          <Link href="/" className="hover:text-foreground transition-colors">
+        <footer
+          className="pt-8 mt-4 flex items-center justify-between text-xs"
+          style={{ borderTop: "1px solid var(--hairline)", color: "var(--subtle)" }}
+        >
+          <Link href="/" className="label hover:text-foreground transition-colors">
             ← Back to HQ
           </Link>
-          <span className="font-mono">{profile.slug}</span>
+          <span className="label">{profile.slug}</span>
         </footer>
       </main>
     </div>
