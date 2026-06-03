@@ -73,7 +73,7 @@ export const profiles: Profile[] = [
     shortName: "FLAIR",
     tagline: "The Flair Collective",
     description:
-      "A marketing collective and parent company to CampusLink, FLAIR Concierge, FLAIR Wholesale, and FLAIR's marketing practice.",
+      "A marketing collective and parent company to CampusLink, FLAIR Marketing Agency, and FLAIR Special Projects.",
     website: { label: "theflaircollective.com", href: "https://theflaircollective.com" },
     socials: [
       { kind: "instagram", href: "https://www.instagram.com/flairdidthat" },
@@ -85,12 +85,13 @@ export const profiles: Profile[] = [
     children: [
       {
         slug: "marketing",
-        name: "FLAIR Marketing",
+        name: "FLAIR Marketing Agency",
         tagline: "FLAIR's marketing practice",
         description:
           "FLAIR's marketing arm — campaign work and next-generation activations.",
         socials: [],
         resources: [],
+        childrenLabel: "practices",
         children: [
           {
             slug: "flair-marketing",
@@ -167,22 +168,32 @@ export const profiles: Profile[] = [
         resources: [],
       },
       {
-        slug: "concierge",
-        name: "FLAIR Concierge",
-        tagline: "Concierge services by FLAIR",
-        website: { label: "theflairconcierge.com", href: "https://theflairconcierge.com" },
-        socials: [
-          { kind: "instagram", href: "https://www.instagram.com/flairconcierge" },
-        ],
-        resources: [],
-      },
-      {
-        slug: "wholesale",
-        name: "FLAIR Wholesale",
-        tagline: "FLAIR's wholesale manifest",
-        website: { label: "View the manifest", href: "https://wholesale-red.vercel.app/catalog" },
+        slug: "special-projects",
+        name: "FLAIR Special Projects",
+        tagline: "Initiatives outside the agency's core offerings",
         socials: [],
         resources: [],
+        childrenLabel: "projects",
+        children: [
+          {
+            slug: "concierge",
+            name: "FLAIR Concierge",
+            tagline: "Concierge services by FLAIR",
+            website: { label: "theflairconcierge.com", href: "https://theflairconcierge.com" },
+            socials: [
+              { kind: "instagram", href: "https://www.instagram.com/flairconcierge" },
+            ],
+            resources: [],
+          },
+          {
+            slug: "wholesale",
+            name: "FLAIR Wholesale",
+            tagline: "FLAIR's wholesale manifest",
+            website: { label: "View the manifest", href: "https://wholesale-red.vercel.app/catalog" },
+            socials: [],
+            resources: [],
+          },
+        ],
       },
     ],
   },
