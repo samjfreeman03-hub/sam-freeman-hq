@@ -21,10 +21,10 @@ export default function Home() {
         {/* Hero */}
         <header className="flex flex-col gap-7 fade-up" style={{ animationDelay: "80ms" }}>
           <div className="label">Sam Freeman — HQ</div>
-          <h1 className="display text-6xl sm:text-7xl font-medium text-foreground">
+          <h1 className="display text-[44px] sm:text-6xl md:text-7xl font-medium text-foreground break-words">
             Sam Freeman.
           </h1>
-          <p className="text-lg sm:text-xl text-muted max-w-xl leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted max-w-xl leading-relaxed">
             {personal.intro}
           </p>
           <div className="pt-3">
@@ -47,10 +47,10 @@ export default function Home() {
                   href={`/${p.slug}`}
                   className="card group block px-6 py-6 sm:px-8 sm:py-7"
                 >
-                  <div className="flex items-start justify-between gap-6">
+                  <div className="flex items-start justify-between gap-4 sm:gap-6">
                     <div className="flex flex-col gap-2 min-w-0">
                       <div className="flex items-baseline gap-3 flex-wrap">
-                        <span className="display text-2xl sm:text-3xl font-medium tracking-tight">
+                        <span className="display text-2xl sm:text-3xl font-medium tracking-tight break-words">
                           {p.name}
                         </span>
                         {p.children?.length ? (

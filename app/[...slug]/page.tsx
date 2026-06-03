@@ -62,10 +62,10 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
 
         {/* Hero */}
         <header className="flex flex-col gap-6 fade-up" style={{ animationDelay: "80ms" }}>
-          <h1 className="display text-5xl sm:text-6xl font-medium text-foreground">
+          <h1 className="display text-[38px] sm:text-5xl md:text-6xl font-medium text-foreground break-words">
             {profile.name}
           </h1>
-          <p className="text-lg text-muted max-w-xl leading-relaxed">
+          <p className="text-base sm:text-lg text-muted max-w-xl leading-relaxed">
             {profile.description ?? profile.tagline}
           </p>
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -101,10 +101,10 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
                 const childPath = "/" + [...slug, c.slug].join("/");
                 return (
                   <li key={c.slug}>
-                    <Link href={childPath} className="card-quiet group block px-6 py-5">
-                      <div className="flex items-start justify-between gap-6">
+                    <Link href={childPath} className="card-quiet group block px-5 py-5 sm:px-6">
+                      <div className="flex items-start justify-between gap-4 sm:gap-6">
                         <div className="flex flex-col gap-1 min-w-0">
-                          <span className="display text-xl sm:text-2xl font-medium">
+                          <span className="display text-xl sm:text-2xl font-medium break-words">
                             {c.name}
                           </span>
                           <span className="text-sm text-muted leading-relaxed">
@@ -139,12 +139,12 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
                     href={r.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="card-quiet group flex items-center justify-between gap-6 px-5 py-4"
+                    className="card-quiet group flex items-center justify-between gap-4 sm:gap-6 px-5 py-4"
                   >
                     <div className="flex flex-col gap-0.5 min-w-0">
-                      <span className="text-base font-medium">{r.label}</span>
+                      <span className="text-base font-medium break-words">{r.label}</span>
                       {r.note && (
-                        <span className="text-xs text-muted">{r.note}</span>
+                        <span className="text-xs text-muted break-words">{r.note}</span>
                       )}
                     </div>
                     <span className="arrow text-subtle shrink-0" aria-hidden>↗</span>

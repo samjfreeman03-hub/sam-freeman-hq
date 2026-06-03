@@ -119,8 +119,8 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   box-shadow: 0 0 0 1px var(--hairline);
   color: var(--foreground);
@@ -130,6 +130,13 @@ body {
     background-color 220ms ease,
     color 220ms ease,
     transform 220ms ease;
+}
+
+@media (min-width: 640px) {
+  .icon-link {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .icon-link:hover {
@@ -144,17 +151,25 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   background: var(--foreground);
   color: var(--background);
   font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1;
   transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (min-width: 640px) {
+  .monogram {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
 }
 
 .monogram:hover {
