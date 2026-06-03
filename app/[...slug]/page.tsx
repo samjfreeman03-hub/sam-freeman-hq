@@ -115,8 +115,11 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
                 return (
                   <li key={c.slug}>
                     <Link href={childPath} className="card-quiet group block px-5 py-5 sm:px-6">
-                      <div className="flex items-start justify-between gap-4 sm:gap-6">
-                        <div className="flex flex-col gap-1 min-w-0">
+                      <div className="flex items-center gap-4 sm:gap-5">
+                        {c.logo && (
+                          <LogoTile logo={c.logo} alt={`${c.name} logo`} size={52} />
+                        )}
+                        <div className="flex flex-col gap-1 min-w-0 flex-1">
                           <span className="display text-xl sm:text-2xl font-medium break-words">
                             {c.name}
                           </span>
@@ -124,7 +127,7 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
                             {c.tagline}
                           </span>
                         </div>
-                        <span className="arrow text-subtle shrink-0 mt-1.5" aria-hidden>↗</span>
+                        <span className="arrow text-subtle shrink-0" aria-hidden>↗</span>
                       </div>
                     </Link>
                   </li>

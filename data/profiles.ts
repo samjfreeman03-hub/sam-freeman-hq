@@ -163,6 +163,7 @@ export const profiles: Profile[] = [
           { kind: "instagram", href: "https://www.instagram.com/joincampuslink" },
           { kind: "linkedin", href: "https://www.linkedin.com/company/joincampuslink" },
         ],
+        logo: { src: "/logos/campuslink.png", bg: "#ffffff", padding: "12%" },
         resources: [],
       },
       {
