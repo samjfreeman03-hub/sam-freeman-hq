@@ -1,64 +1,69 @@
-import Image from "next/image";
+import Link from "next/link";
+import { personal, profiles } from "@/data/profiles";
+import { SocialIcons } from "./components/SocialIcons";
 
 export default function Home() {
+  const featured = profiles.filter((p) => !p.hiddenOnHQ);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex flex-col flex-1 items-center w-full">
+      <main className="w-full max-w-3xl px-6 sm:px-10 py-20 sm:py-28 flex flex-col gap-16 sm:gap-20">
+        <header className="flex flex-col gap-6">
+          <div className="text-xs uppercase tracking-[0.18em] text-muted">
+            Sam Freeman — HQ
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-medium tracking-tight leading-[1.05]">
+            {personal.name}
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg text-muted max-w-xl leading-relaxed">
+            {personal.intro}
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          <div className="pt-2">
+            <SocialIcons socials={personal.socials} />
+          </div>
+        </header>
+
+        <section className="flex flex-col gap-3">
+          <div className="text-xs uppercase tracking-[0.18em] text-muted mb-2">
+            Ventures
+          </div>
+          <ul className="flex flex-col gap-3">
+            {featured.map((p) => (
+              <li key={p.slug}>
+                <Link
+                  href={`/${p.slug}`}
+                  className="card group block px-6 py-5 sm:px-7 sm:py-6"
+                >
+                  <div className="flex items-start justify-between gap-6">
+                    <div className="flex flex-col gap-1.5 min-w-0">
+                      <div className="flex items-baseline gap-3 flex-wrap">
+                        <span className="text-xl sm:text-2xl font-medium tracking-tight">
+                          {p.name}
+                        </span>
+                        {p.children?.length ? (
+                          <span className="text-xs text-muted tracking-wide">
+                            {p.children.length} {p.children.length === 1 ? "brand" : "brands"}
+                          </span>
+                        ) : null}
+                      </div>
+                      <div className="text-sm text-muted leading-relaxed">
+                        {p.tagline}
+                      </div>
+                    </div>
+                    <span className="arrow text-muted shrink-0 mt-1.5" aria-hidden>
+                      ↗
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <footer className="pt-6 hairline-b border-t border-[var(--hairline)] text-xs text-muted flex items-center justify-between">
+          <span>© {new Date().getFullYear()} Sam Freeman</span>
+          <span className="font-mono">v0.1</span>
+        </footer>
       </main>
     </div>
   );
