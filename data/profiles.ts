@@ -179,7 +179,7 @@ export const profiles: Profile[] = [
     name: "MTRNM",
     tagline: "Global house music events.",
     description:
-      "MTRNM is a global house music platform operating across 12 countries & 18 cities that combines curated live experiences with a media engine and brand ecosystem, operating as an events label, cultural curator, and lifestyle brand.",
+      "MTRNM (Metronome) is a global house music platform operating across 12 countries & 18 cities that combines curated live experiences with a media engine and brand ecosystem, operating as an events label, cultural curator, and lifestyle brand.",
     website: { label: "mtrnm.co", href: "https://www.mtrnm.co" },
     socials: [
       { kind: "instagram", href: "https://www.instagram.com/mtrnm_" },

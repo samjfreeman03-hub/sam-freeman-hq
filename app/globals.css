@@ -176,22 +176,6 @@ body {
   transform: rotate(-4deg);
 }
 
-/* Live status dot */
-.status-dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: #16a34a;
-  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.16);
-  animation: pulse 2.4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.16); }
-  50%      { box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.06); }
-}
-
 /* Entrance animations */
 @keyframes fadeUp {
   from {
@@ -223,7 +207,6 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .fade-up,
   .stagger > *,
-  .status-dot,
   .arrow,
   .card,
   .card-quiet,

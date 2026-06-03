@@ -12,10 +12,6 @@ export default function Home() {
         {/* Top bar */}
         <div className="flex items-center justify-between fade-up">
           <Monogram />
-          <div className="flex items-center gap-2">
-            <span className="status-dot" aria-hidden />
-            <span className="label" style={{ color: "var(--foreground)" }}>Live</span>
-          </div>
         </div>
 
         {/* Hero */}
