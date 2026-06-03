@@ -251,8 +251,8 @@ export const profiles: Profile[] = [
   {
     slug: "stealth-labs",
     name: "Stealth Labs",
-    tagline: "AI products.",
-    description: "Building AI-native products and tools.",
+    tagline: "AI Infrastructure.",
+    description: "AI Infrastructure for underserved industries.",
     website: { label: "stealth-labs.ai", href: "https://stealth-labs.ai" },
     socials: [],
     logo: { src: "/logos/stealth-labs.png", bg: "#000000" },
