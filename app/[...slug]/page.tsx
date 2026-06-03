@@ -37,7 +37,7 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
 
   return (
     <div className="flex flex-col flex-1 items-center w-full">
-      <main className="w-full max-w-3xl px-6 sm:px-10 py-12 sm:py-16 flex flex-col gap-16">
+      <main className="w-full max-w-3xl px-6 sm:px-10 py-12 sm:py-16 flex flex-col gap-10 sm:gap-12">
         {/* Top bar */}
         <div className="flex items-center justify-between fade-up">
           <Monogram />
@@ -62,7 +62,7 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
         </div>
 
         {/* Hero */}
-        <header className="flex flex-col gap-6 fade-up" style={{ animationDelay: "80ms" }}>
+        <header className="flex flex-col gap-5 fade-up" style={{ animationDelay: "80ms" }}>
           {profile.logo && (
             <LogoTile
               logo={profile.logo}
@@ -102,7 +102,7 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
         </header>
 
         {hasChildren && (
-          <section className="flex flex-col gap-5">
+          <section className="flex flex-col gap-3">
             <div className="flex items-baseline justify-between">
               <div className="label">{profile.childrenLabel ?? "Brands"}</div>
               <div className="label" style={{ color: "var(--subtle)" }}>
@@ -137,7 +137,7 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
         {resourceGroups.map((group, idx) => (
           <section
             key={group.title ?? `group-${idx}`}
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-3"
           >
             <div className="flex items-baseline justify-between">
               <div className="label">{group.title ?? "Resources"}</div>

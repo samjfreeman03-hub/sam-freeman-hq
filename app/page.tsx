@@ -47,7 +47,7 @@ export default function Home() {
         </header>
 
         {/* Ventures */}
-        <section className="flex flex-col gap-5">
+        <section className="flex flex-col gap-3">
           <div className="flex items-baseline justify-between">
             <div className="label">Ventures</div>
             <div className="label" style={{ color: "var(--subtle)" }}>
