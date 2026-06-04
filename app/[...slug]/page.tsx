@@ -37,7 +37,7 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
 
   return (
     <div className="flex flex-col flex-1 items-center w-full">
-      <main className="w-full max-w-3xl px-6 sm:px-10 py-10 sm:py-14 flex flex-col gap-7 sm:gap-9">
+      <main className="w-full max-w-3xl px-6 sm:px-10 py-8 sm:py-10 flex flex-col gap-5 sm:gap-7">
         {/* Top bar */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 fade-up">
           <Monogram />
@@ -67,14 +67,14 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
             <LogoTile
               logo={profile.logo}
               alt={`${profile.name} logo`}
-              size={88}
+              size={72}
               className="logo-tile-hero"
             />
           )}
-          <h1 className="display text-[38px] sm:text-5xl md:text-6xl font-medium text-foreground break-words">
+          <h1 className="display text-[36px] sm:text-[44px] md:text-[52px] font-medium text-foreground break-words">
             {profile.name}
           </h1>
-          <p className="text-base sm:text-lg text-muted max-w-xl leading-relaxed">
+          <p className="text-sm sm:text-base text-muted max-w-xl leading-relaxed">
             {profile.description ?? profile.tagline}
           </p>
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -114,16 +114,16 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
                 const childPath = "/" + [...slug, c.slug].join("/");
                 return (
                   <li key={c.slug}>
-                    <Link href={childPath} className="card-quiet group block px-5 py-5 sm:px-6">
-                      <div className="flex items-center gap-4 sm:gap-5">
+                    <Link href={childPath} className="card-quiet group block px-4 py-3.5 sm:px-5 sm:py-4">
+                      <div className="flex items-center gap-4">
                         {c.logo && (
-                          <LogoTile logo={c.logo} alt={`${c.name} logo`} size={52} />
+                          <LogoTile logo={c.logo} alt={`${c.name} logo`} size={48} />
                         )}
-                        <div className="flex flex-col gap-1 min-w-0 flex-1">
+                        <div className="flex flex-col gap-0.5 min-w-0 flex-1">
                           <span className="display text-xl sm:text-2xl font-medium break-words">
                             {c.name}
                           </span>
-                          <span className="text-sm text-muted leading-relaxed">
+                          <span className="text-sm text-muted leading-snug">
                             {c.tagline}
                           </span>
                         </div>
@@ -155,10 +155,10 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
                     href={r.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="card-quiet group flex items-center justify-between gap-4 sm:gap-6 px-5 py-4"
+                    className="card-quiet group flex items-center justify-between gap-4 px-4 py-3 sm:px-5 sm:py-3.5"
                   >
                     <div className="flex flex-col gap-0.5 min-w-0">
-                      <span className="text-base font-medium break-words">{r.label}</span>
+                      <span className="text-sm sm:text-base font-medium break-words">{r.label}</span>
                       {r.note && (
                         <span className="text-xs text-muted break-words">{r.note}</span>
                       )}
@@ -172,7 +172,7 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
         ))}
 
         <footer
-          className="pt-8 mt-4 flex items-center justify-between text-xs"
+          className="pt-4 flex items-center justify-between text-xs"
           style={{ borderTop: "1px solid var(--hairline)", color: "var(--subtle)" }}
         >
           <Link href="/" className="label hover:text-foreground transition-colors">
