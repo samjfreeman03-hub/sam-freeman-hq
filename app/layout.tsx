@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Sam Freeman's hub: FLAIR, CampusLink, MTRNM, Stealth Labs, and more.",
   openGraph: {
     title: "Sam's HQ",
-    description: "Building across global events, marketing, and AI.",
+    description: "Building across marketing, global events, and AI.",
     url: "https://samfreeman.org",
     siteName: "Sam's HQ",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Sam's HQ",
-    description: "Building across global events, marketing, and AI.",
+    description: "Building across marketing, global events, and AI.",
   },
 };
 

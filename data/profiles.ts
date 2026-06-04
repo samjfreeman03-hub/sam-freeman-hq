@@ -51,7 +51,7 @@ export type Profile = {
 
 export const personal = {
   name: "Sam Freeman",
-  intro: "Building across global events, marketing, and AI.",
+  intro: "Building across marketing, global events, and AI.",
   socials: [
     { kind: "instagram" as const, href: "https://www.instagram.com/sam_.f" },
     { kind: "linkedin" as const, href: "https://www.linkedin.com/in/samjfreeman1/" },

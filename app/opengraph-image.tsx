@@ -64,7 +64,7 @@ export default function OpenGraphImage() {
             marginTop: 24,
           }}
         >
-          Building across global events, marketing, and AI.
+          Building across marketing, global events, and AI.
         </div>
       </div>
     ),
