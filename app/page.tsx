@@ -8,7 +8,7 @@ export default function Home() {
   const featured = profiles.filter((p) => !p.hiddenOnHQ);
 
   return (
-    <div className="flex flex-col flex-1 items-center w-full">
+    <div className="flex flex-col flex-1 items-center w-full sm:justify-center">
       <main className="w-full max-w-3xl px-6 sm:px-10 py-8 sm:py-10 flex flex-col gap-5 sm:gap-7">
         {/* Hero — stacked on mobile, side-by-side on desktop */}
         <header className="flex flex-col sm:flex-row sm:items-center sm:gap-7 gap-4 fade-up">
