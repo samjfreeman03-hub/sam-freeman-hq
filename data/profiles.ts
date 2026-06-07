@@ -193,6 +193,13 @@ export const profiles: Profile[] = [
             socials: [],
             resources: [],
           },
+          {
+            slug: "price-errors",
+            name: "Price Errors",
+            tagline: "The price errors, deals, and freebies app.",
+            socials: [],
+            resources: [],
+          },
         ],
       },
     ],
