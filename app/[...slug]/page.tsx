@@ -20,9 +20,32 @@ export async function generateMetadata({
   const { slug } = await params;
   const profile = findProfile(slug);
   if (!profile) return { title: "Not found" };
+  const desc = profile.description ?? profile.tagline;
+  const ogUrl = `/og?path=${slug.join("/")}`;
   return {
-    title: `${profile.name} — Sam Freeman HQ`,
-    description: profile.description ?? profile.tagline,
+    title: profile.name,
+    description: desc,
+    openGraph: {
+      title: profile.name,
+      description: desc,
+      type: "website",
+      siteName: "Sam's HQ",
+      url: `https://samfreeman.org/${slug.join("/")}`,
+      images: [
+        {
+          url: ogUrl,
+          width: 1200,
+          height: 630,
+          alt: profile.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: profile.name,
+      description: desc,
+      images: [ogUrl],
+    },
   };
 }
 
