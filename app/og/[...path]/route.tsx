@@ -1,9 +1,11 @@
 import { ImageResponse } from "next/og";
-import { findProfile, getAncestors } from "@/data/profiles";
-
-export const dynamic = "force-dynamic";
+import { allProfilePaths, findProfile, getAncestors } from "@/data/profiles";
 
 const SIZE = { width: 1200, height: 630 };
+
+export function generateStaticParams() {
+  return allProfilePaths().map((path) => ({ path }));
+}
 
 function sizeFor(text: string): number {
   if (text.length <= 10) return 152;
@@ -13,10 +15,12 @@ function sizeFor(text: string): number {
   return 72;
 }
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const pathParam = searchParams.get("path") ?? "";
-  const slug = pathParam ? pathParam.split("/").filter(Boolean) : [];
+export async function GET(
+  _request: Request,
+  { params }: { params: Promise<{ path: string[] }> }
+) {
+  const { path } = await params;
+  const slug = path ?? [];
 
   const profile = slug.length > 0 ? findProfile(slug) : null;
 

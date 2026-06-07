@@ -21,7 +21,7 @@ export async function generateMetadata({
   const profile = findProfile(slug);
   if (!profile) return { title: "Not found" };
   const desc = profile.description ?? profile.tagline;
-  const ogUrl = `/og?path=${slug.join("/")}`;
+  const ogUrl = `/og/${slug.join("/")}`;
   return {
     title: profile.name,
     description: desc,
