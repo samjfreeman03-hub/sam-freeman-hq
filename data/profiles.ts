@@ -197,7 +197,13 @@ export const profiles: Profile[] = [
             slug: "price-errors",
             name: "Price Errors",
             tagline: "The price errors, deals, and freebies app.",
-            socials: [],
+            website: {
+              label: "Download on the App Store",
+              href: "https://apps.apple.com/us/app/priceerrors-deals/id6763816521",
+            },
+            socials: [
+              { kind: "instagram", href: "https://www.instagram.com/priceerrorsapp" },
+            ],
             resources: [],
           },
         ],
