@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { findProfile, getAncestors } from "@/data/profiles";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 const SIZE = { width: 1200, height: 630 };
 
