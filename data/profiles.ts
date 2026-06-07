@@ -204,6 +204,7 @@ export const profiles: Profile[] = [
             socials: [
               { kind: "instagram", href: "https://www.instagram.com/priceerrorsapp" },
             ],
+            logo: { src: "/logos/price-errors.png", bg: "#00c897" },
             resources: [],
           },
         ],
