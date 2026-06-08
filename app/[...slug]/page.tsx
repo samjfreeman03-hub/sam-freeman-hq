@@ -100,6 +100,19 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
           <p className="text-sm sm:text-base text-muted max-w-xl leading-relaxed">
             {profile.description ?? profile.tagline}
           </p>
+          {profile.cta && (
+            <div className="pt-1">
+              <a
+                href={profile.cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button group"
+              >
+                {profile.cta.label}
+                <span className="arrow" aria-hidden>↗</span>
+              </a>
+            </div>
+          )}
           <div className="flex flex-wrap items-center gap-4 pt-2">
             {profile.website && (
               <a

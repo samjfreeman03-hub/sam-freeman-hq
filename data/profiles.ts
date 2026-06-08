@@ -33,6 +33,11 @@ export type Logo = {
   padding?: string;
 };
 
+export type CTA = {
+  label: string;
+  href: string;
+};
+
 export type Profile = {
   slug: string;
   name: string;
@@ -40,6 +45,8 @@ export type Profile = {
   tagline: string;
   description?: string;
   website?: { label: string; href: string };
+  /** Primary call-to-action button rendered prominently in the hero. */
+  cta?: CTA;
   socials: Social[];
   resources: ResourceGroup[];
   logo?: Logo;
@@ -280,6 +287,10 @@ export const profiles: Profile[] = [
     tagline: "AI Infrastructure.",
     description: "AI Infrastructure for underserved industries.",
     website: { label: "stealth-labs.ai", href: "https://stealth-labs.ai" },
+    cta: {
+      label: "Want to invest? We are raising.",
+      href: "https://raise.stealth-labs.ai",
+    },
     socials: [],
     logo: { src: "/logos/stealth-labs.png", bg: "#000000" },
     resources: [],
