@@ -17,6 +17,7 @@ export function LogoTile({ logo, alt, size = 56, className = "" }: LogoTileProps
         background: logo.bg,
         width: size,
         height: size,
+        borderRadius: logo.radius,
       }}
     >
       <div

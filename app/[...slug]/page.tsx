@@ -191,9 +191,12 @@ export default async function ProfilePage({ params }: PageProps<"/[...slug]">) {
                     href={r.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="card-quiet group flex items-center justify-between gap-4 px-4 py-3 sm:px-5 sm:py-3.5"
+                    className="card-quiet group flex items-center gap-3 sm:gap-4 px-4 py-3 sm:px-5 sm:py-3.5"
                   >
-                    <div className="flex flex-col gap-0.5 min-w-0">
+                    {r.logo && (
+                      <LogoTile logo={r.logo} alt={`${r.label} logo`} size={40} />
+                    )}
+                    <div className="flex flex-col gap-0.5 min-w-0 flex-1">
                       <span className="text-sm sm:text-base font-medium break-words">{r.label}</span>
                       {r.note && (
                         <span className="text-xs text-muted break-words">{r.note}</span>

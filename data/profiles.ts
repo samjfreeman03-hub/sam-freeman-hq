@@ -17,6 +17,8 @@ export type Resource = {
   label: string;
   href: string;
   note?: string;
+  /** Optional logo tile shown to the left of the resource label (e.g. for product items). */
+  logo?: Logo;
 };
 
 export type ResourceGroup = {
@@ -31,6 +33,8 @@ export type Logo = {
   bg: string;
   /** Optional padding inside the tile (% of tile size) for logos that need breathing room. */
   padding?: string;
+  /** Optional border-radius override — e.g. "9999px" for circular logos. Defaults to tile radius. */
+  radius?: string;
 };
 
 export type CTA = {
@@ -293,7 +297,23 @@ export const profiles: Profile[] = [
     },
     socials: [],
     logo: { src: "/logos/stealth-labs.png", bg: "#000000" },
-    resources: [],
+    resources: [
+      {
+        title: "Our Products",
+        items: [
+          {
+            label: "Vetra AI",
+            href: "https://www.joinvetra.ai/",
+            note: "Brand safety vetting AI for influencers — vetting, monitoring, content review, and creator discovery.",
+            logo: {
+              src: "/logos/vetra.png",
+              bg: "#025100",
+              radius: "9999px",
+            },
+          },
+        ],
+      },
+    ],
   },
 ];
 
