@@ -28,12 +28,12 @@ export type ResourceGroup = {
 
 export type Logo = {
   src: string;
-  /** Tile background color — used as the surface behind the logo image.
+  /** Tile background color, used as the surface behind the logo image.
    *  Set to match the logo's native background to avoid visible letterbox. */
   bg: string;
   /** Optional padding inside the tile (% of tile size) for logos that need breathing room. */
   padding?: string;
-  /** Optional border-radius override — e.g. "9999px" for circular logos. Defaults to tile radius. */
+  /** Optional border-radius override (e.g. "9999px" for circular logos). Defaults to tile radius. */
   radius?: string;
 };
 
@@ -70,7 +70,7 @@ export const personal = {
   ],
 };
 
-// Shared resource — appears under both FLAIR Next-Gen and MTRNM
+// Shared resource: appears under both FLAIR Next-Gen and MTRNM
 const methodOasisRecap: Resource = {
   label: "method oasis Recap Deck",
   href: "https://www.canva.com/design/DAHHkeoN3xo/hXP9G-uB661W-JuurynxoQ/view",
@@ -117,7 +117,7 @@ export const profiles: Profile[] = [
                     href: "https://www.canva.com/design/DAHG5rlUg_8/J1P3uaq_MG8Up1vIvIFxPQ/view?utm_content=DAHG5rlUg_8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2c8f57f4a1",
                   },
                   {
-                    label: "FLAIR x Equinox Run — Sponsorship Deck",
+                    label: "FLAIR x Equinox Run: Sponsorship Deck",
                     href: "https://www.canva.com/design/DAHKosoPxWQ/qU3hQx-J_V_wl0wuAlcmiw/view?utm_content=DAHKosoPxWQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hef6b7239f7#1",
                   },
                 ],
@@ -269,7 +269,7 @@ export const profiles: Profile[] = [
             href: "https://www.instagram.com/p/DYP0KPvkUfX/?igsh=NTc4MTIwNjQ2YQ%3D%3D",
           },
           {
-            label: "Surrogates Courthouse — Manhattan, NYC",
+            label: "Surrogates Courthouse, Manhattan, NYC",
             href: "https://www.instagram.com/p/DWm5T51mFml/?igsh=NTc4MTIwNjQ2YQ%3D%3D",
           },
           {
@@ -278,7 +278,7 @@ export const profiles: Profile[] = [
             note: "with method & Ulta Beauty",
           },
           {
-            label: "The Dead Sea — Amman, Jordan",
+            label: "The Dead Sea, Amman, Jordan",
             href: "https://www.instagram.com/p/DNlM_CFoe_y/?igsh=NTc4MTIwNjQ2YQ==",
           },
         ],
@@ -304,7 +304,7 @@ export const profiles: Profile[] = [
           {
             label: "Vetra AI",
             href: "https://www.joinvetra.ai/",
-            note: "Brand safety vetting AI for influencers — vetting, monitoring, content review, and creator discovery.",
+            note: "Brand safety vetting AI for influencers. Vetting, monitoring, content review, and creator discovery.",
             logo: {
               src: "/logos/vetra.png",
               bg: "#025100",

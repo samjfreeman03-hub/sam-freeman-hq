@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center w-full sm:justify-center">
       <main className="w-full max-w-3xl px-6 sm:px-10 py-8 sm:py-10 flex flex-col gap-5 sm:gap-7">
-        {/* Hero — stacked on mobile, side-by-side on desktop */}
+        {/* Hero: stacked on mobile, side-by-side on desktop */}
         <header className="flex flex-col sm:flex-row sm:items-center sm:gap-7 gap-4 fade-up">
           <div className="avatar-wrap shrink-0">
             <Image
@@ -33,7 +33,7 @@ export default function Home() {
             </a>
           </div>
           <div className="flex flex-col gap-2.5 min-w-0 flex-1">
-            <div className="label">Sam Freeman — HQ</div>
+            <div className="label">Sam Freeman HQ</div>
             <h1 className="display text-[40px] sm:text-5xl md:text-[56px] font-medium text-foreground break-words">
               Sam Freeman.
             </h1>

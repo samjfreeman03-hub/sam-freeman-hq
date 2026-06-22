@@ -60,7 +60,7 @@ const labels: Record<SocialKind, string> = {
   email: "Email",
 };
 
-/** Renders social icons as siblings — wrap in a flex container in the parent. */
+/** Renders social icons as siblings. Wrap in a flex container in the parent. */
 export function SocialIcons({ socials }: { socials: Social[] }) {
   return (
     <>

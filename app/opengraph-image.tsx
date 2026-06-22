@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Sam Freeman — HQ";
+export const alt = "Sam Freeman HQ";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -20,7 +20,7 @@ export default function OpenGraphImage() {
           fontFamily: "ui-sans-serif, system-ui, -apple-system, sans-serif",
         }}
       >
-        {/* SF monogram — matches the site */}
+        {/* SF monogram: matches the site */}
         <div
           style={{
             display: "flex",

@@ -65,7 +65,7 @@ body {
   line-height: 1;
 }
 
-/* Card — no border, soft shadow, lift on hover */
+/* Card: no border, soft shadow, lift on hover */
 .card {
   background: var(--surface);
   border-radius: 16px;
@@ -152,7 +152,7 @@ body {
   }
 }
 
-/* Icon pill — sleeker hover */
+/* Icon pill: sleeker hover */
 .icon-link {
   display: inline-flex;
   align-items: center;
@@ -184,7 +184,7 @@ body {
   transform: translateY(-1px);
 }
 
-/* Logo tile — rounded-square brand mark, sits like an app icon */
+/* Logo tile: rounded-square brand mark, sits like an app icon */
 .logo-tile {
   display: inline-flex;
   align-items: center;
