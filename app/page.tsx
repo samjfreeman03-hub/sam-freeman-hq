@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { personal, profiles } from "@/data/profiles";
+import { personal, press, profiles } from "@/data/profiles";
 import { SocialIcons } from "./components/SocialIcons";
 import { LogoTile } from "./components/LogoTile";
 
@@ -89,6 +89,40 @@ export default function Home() {
             ))}
           </ul>
         </section>
+
+        {/* Press */}
+        {press.length > 0 && (
+          <section className="flex flex-col gap-2.5">
+            <div className="flex items-baseline justify-between">
+              <div className="label">Press</div>
+              <div className="label" style={{ color: "var(--subtle)" }}>
+                {String(press.length).padStart(2, "0")}
+              </div>
+            </div>
+            <ul className="flex flex-col gap-2.5 stagger">
+              {press.map((p) => (
+                <li key={p.href}>
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="card-quiet group flex items-center gap-4 px-4 py-3 sm:px-5 sm:py-3.5"
+                  >
+                    <div className="flex flex-col gap-0.5 min-w-0 flex-1">
+                      <span className="text-sm sm:text-base font-medium break-words">
+                        {p.label}
+                      </span>
+                      {p.note && (
+                        <span className="text-xs text-muted break-words">{p.note}</span>
+                      )}
+                    </div>
+                    <span className="arrow text-subtle shrink-0" aria-hidden>↗</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* Footer */}
         <footer

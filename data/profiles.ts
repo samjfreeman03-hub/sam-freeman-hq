@@ -60,6 +60,20 @@ export type Profile = {
   hiddenOnHQ?: boolean;
 };
 
+/** Press features shown on the HQ page, separate from the ventures list. */
+export const press: Resource[] = [
+  {
+    label: "What a UCLA Acceptance REALLY Means: 3 Layers of UCLA with 3 Alumni",
+    href: "https://www.youtube.com/watch?v=zuTR5LFQvKE",
+    note: "YouTube, UCLA Alumni",
+  },
+  {
+    label: "Instagram Feature",
+    href: "https://www.instagram.com/reel/DXz9gDqD2sn/?igsh=NTc4MTIwNjQ2YQ==",
+    note: "Instagram Reel",
+  },
+];
+
 export const personal = {
   name: "Sam Freeman",
   intro: "Building across marketing, global events, and AI.",
