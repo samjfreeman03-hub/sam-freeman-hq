@@ -60,15 +60,15 @@ export type Profile = {
   hiddenOnHQ?: boolean;
 };
 
-/** Press features shown on the HQ page, separate from the ventures list. */
+/** Press features, linked from the PRESS button on the HQ page. */
 export const press: Resource[] = [
   {
-    label: "What a UCLA Acceptance REALLY Means: 3 Layers of UCLA with 3 Alumni",
+    label: "What a UCLA Acceptance REALLY Means: 3 Layers of UCLA",
     href: "https://www.youtube.com/watch?v=zuTR5LFQvKE",
     note: "YouTube, UCLA Alumni",
   },
   {
-    label: "Instagram Feature",
+    label: "UCLA Alumni Interview",
     href: "https://www.instagram.com/reel/DXz9gDqD2sn/?igsh=NTc4MTIwNjQ2YQ==",
     note: "Instagram Reel",
   },

@@ -114,6 +114,44 @@ body {
   transform: translate(3px, -3px);
 }
 
+/* Press pill: sits alongside the round icon links */
+.press-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px var(--hairline);
+  background: var(--surface);
+  color: var(--foreground);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    box-shadow 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.press-pill:hover {
+  background: var(--foreground);
+  color: var(--surface);
+  box-shadow: 0 0 0 1px var(--foreground), 0 8px 20px -10px rgba(17, 17, 17, 0.3);
+  transform: translateY(-1px);
+}
+
+@media (min-width: 640px) {
+  .press-pill {
+    height: 40px;
+  }
+}
+
 /* Primary CTA button */
 .cta-button {
   display: inline-flex;
