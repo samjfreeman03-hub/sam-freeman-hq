@@ -96,7 +96,7 @@ export const profiles: Profile[] = [
     slug: "flair",
     name: "FLAIR",
     shortName: "FLAIR",
-    tagline: "Next-Gen & culture marketing, martech, & special projects.",
+    tagline: "College, next-gen, & culture marketing.",
     description:
       "A marketing collective and parent company to CampusLink, FLAIR Marketing Agency, and FLAIR Special Projects.",
     website: { label: "theflaircollective.com", href: "https://theflaircollective.com" },
