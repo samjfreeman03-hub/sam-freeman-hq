@@ -1,10 +1,20 @@
 import { ImageResponse } from "next/og";
-import { allProfilePaths, findProfile, getAncestors } from "@/data/profiles";
+import {
+  allProfilePaths,
+  findProfile,
+  findPressGroup,
+  getAncestors,
+  press,
+} from "@/data/profiles";
 
 const SIZE = { width: 1200, height: 630 };
 
 export function generateStaticParams() {
-  return allProfilePaths().map((path) => ({ path }));
+  return [
+    ...allProfilePaths().map((path) => ({ path })),
+    { path: ["press"] },
+    ...press.map((g) => ({ path: ["press", g.slug] })),
+  ];
 }
 
 function sizeFor(text: string): number {
@@ -22,18 +32,32 @@ export async function GET(
   const { path } = await params;
   const slug = path ?? [];
 
-  const profile = slug.length > 0 ? findProfile(slug) : null;
+  let name = "Sam Freeman.";
+  let tagline = "Building across marketing, global events, and AI.";
+  let breadcrumb = "SAM FREEMAN HQ";
 
-  const name = profile?.name ?? "Sam Freeman.";
-  const tagline =
-    profile?.tagline ??
-    "Building across marketing, global events, and AI.";
-  const ancestors = profile ? getAncestors(slug) : [];
-
-  const breadcrumb =
-    ancestors.length > 0
-      ? ancestors.map((a) => a.name).join("  ·  ").toUpperCase()
-      : "SAM FREEMAN HQ";
+  if (slug[0] === "press") {
+    const group = slug.length > 1 ? findPressGroup(slug[1]) : null;
+    if (group) {
+      name = group.title;
+      tagline = group.tagline ?? "";
+      breadcrumb = "SAM FREEMAN HQ  ·  PRESS";
+    } else {
+      name = "Press";
+      tagline = "Features and interviews.";
+      breadcrumb = "SAM FREEMAN HQ";
+    }
+  } else {
+    const profile = slug.length > 0 ? findProfile(slug) : null;
+    if (profile) {
+      name = profile.name;
+      tagline = profile.tagline;
+      const ancestors = getAncestors(slug);
+      if (ancestors.length > 0) {
+        breadcrumb = ancestors.map((a) => a.name).join("  ·  ").toUpperCase();
+      }
+    }
+  }
 
   const nameFontSize = sizeFor(name);
 

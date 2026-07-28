@@ -60,10 +60,20 @@ export type Profile = {
   hiddenOnHQ?: boolean;
 };
 
+/** A press group gets its own page at /press/<slug>. */
+export type PressGroup = {
+  slug: string;
+  title: string;
+  tagline?: string;
+  items: Resource[];
+};
+
 /** Press features, grouped by outlet or theme. Linked from the PRESS button on the HQ page. */
-export const press: ResourceGroup[] = [
+export const press: PressGroup[] = [
   {
+    slug: "ucla",
     title: "UCLA",
+    tagline: "Features with UCLA and the UCLA Alumni Association.",
     items: [
       {
         label: "What a UCLA Acceptance REALLY Means: 3 Layers of UCLA",
@@ -345,6 +355,10 @@ export const profiles: Profile[] = [
     ],
   },
 ];
+
+export function findPressGroup(slug: string): PressGroup | null {
+  return press.find((g) => g.slug === slug) ?? null;
+}
 
 export function findProfile(slugs: string[]): Profile | null {
   let current: Profile | undefined;

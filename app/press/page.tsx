@@ -6,6 +6,20 @@ import { Monogram } from "../components/Monogram";
 export const metadata: Metadata = {
   title: "Press",
   description: "Press features and interviews with Sam Freeman.",
+  openGraph: {
+    title: "Press",
+    description: "Features and interviews.",
+    type: "website",
+    siteName: "Sam's HQ",
+    url: "https://samfreeman.org/press",
+    images: [{ url: "/og/press", width: 1200, height: 630, alt: "Press" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Press",
+    description: "Features and interviews.",
+    images: ["/og/press"],
+  },
 };
 
 export default function PressPage() {
@@ -36,42 +50,45 @@ export default function PressPage() {
           </p>
         </header>
 
-        {/* Features, grouped */}
-        {groups.map((group, idx) => (
-          <section
-            key={group.title ?? `group-${idx}`}
-            className="flex flex-col gap-2.5"
-          >
-            <div className="flex items-baseline justify-between">
-              <div className="label">{group.title ?? "Features"}</div>
-              <div className="label" style={{ color: "var(--subtle)" }}>
-                {String(group.items.length).padStart(2, "0")}
-              </div>
+        {/* Groups */}
+        <section className="flex flex-col gap-2.5">
+          <div className="flex items-baseline justify-between">
+            <div className="label">Coverage</div>
+            <div className="label" style={{ color: "var(--subtle)" }}>
+              {String(groups.length).padStart(2, "0")}
             </div>
-            <ul className="flex flex-col gap-2.5 stagger">
-              {group.items.map((p) => (
-                <li key={p.href}>
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="card-quiet group flex items-center gap-4 px-4 py-3 sm:px-5 sm:py-3.5"
-                  >
+          </div>
+          <ul className="flex flex-col gap-2.5 stagger">
+            {groups.map((g) => (
+              <li key={g.slug}>
+                <Link
+                  href={`/press/${g.slug}`}
+                  className="card-quiet group block px-4 py-3.5 sm:px-5 sm:py-4"
+                >
+                  <div className="flex items-center gap-4">
                     <div className="flex flex-col gap-0.5 min-w-0 flex-1">
-                      <span className="text-sm sm:text-base font-medium break-words">
-                        {p.label}
-                      </span>
-                      {p.note && (
-                        <span className="text-xs text-muted break-words">{p.note}</span>
+                      <div className="flex items-baseline gap-3 flex-wrap">
+                        <span className="display text-xl sm:text-2xl font-medium break-words">
+                          {g.title}
+                        </span>
+                        <span className="label">
+                          {String(g.items.length).padStart(2, "0")}{" "}
+                          {g.items.length === 1 ? "feature" : "features"}
+                        </span>
+                      </div>
+                      {g.tagline && (
+                        <span className="text-sm text-muted leading-snug">
+                          {g.tagline}
+                        </span>
                       )}
                     </div>
                     <span className="arrow text-subtle shrink-0" aria-hidden>↗</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         {/* Footer */}
         <footer
