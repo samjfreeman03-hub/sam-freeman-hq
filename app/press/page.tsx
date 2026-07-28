@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function PressPage() {
+  const groups = press.filter((g) => g.items.length > 0);
+
   return (
     <div className="flex flex-col flex-1 items-center w-full sm:justify-center">
       <main className="w-full max-w-3xl px-6 sm:px-10 py-8 sm:py-10 flex flex-col gap-5 sm:gap-7">
@@ -34,37 +36,42 @@ export default function PressPage() {
           </p>
         </header>
 
-        {/* Features */}
-        <section className="flex flex-col gap-2.5">
-          <div className="flex items-baseline justify-between">
-            <div className="label">Features</div>
-            <div className="label" style={{ color: "var(--subtle)" }}>
-              {String(press.length).padStart(2, "0")}
+        {/* Features, grouped */}
+        {groups.map((group, idx) => (
+          <section
+            key={group.title ?? `group-${idx}`}
+            className="flex flex-col gap-2.5"
+          >
+            <div className="flex items-baseline justify-between">
+              <div className="label">{group.title ?? "Features"}</div>
+              <div className="label" style={{ color: "var(--subtle)" }}>
+                {String(group.items.length).padStart(2, "0")}
+              </div>
             </div>
-          </div>
-          <ul className="flex flex-col gap-2.5 stagger">
-            {press.map((p) => (
-              <li key={p.href}>
-                <a
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-quiet group flex items-center gap-4 px-4 py-3 sm:px-5 sm:py-3.5"
-                >
-                  <div className="flex flex-col gap-0.5 min-w-0 flex-1">
-                    <span className="text-sm sm:text-base font-medium break-words">
-                      {p.label}
-                    </span>
-                    {p.note && (
-                      <span className="text-xs text-muted break-words">{p.note}</span>
-                    )}
-                  </div>
-                  <span className="arrow text-subtle shrink-0" aria-hidden>↗</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
+            <ul className="flex flex-col gap-2.5 stagger">
+              {group.items.map((p) => (
+                <li key={p.href}>
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="card-quiet group flex items-center gap-4 px-4 py-3 sm:px-5 sm:py-3.5"
+                  >
+                    <div className="flex flex-col gap-0.5 min-w-0 flex-1">
+                      <span className="text-sm sm:text-base font-medium break-words">
+                        {p.label}
+                      </span>
+                      {p.note && (
+                        <span className="text-xs text-muted break-words">{p.note}</span>
+                      )}
+                    </div>
+                    <span className="arrow text-subtle shrink-0" aria-hidden>↗</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
 
         {/* Footer */}
         <footer

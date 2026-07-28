@@ -60,17 +60,32 @@ export type Profile = {
   hiddenOnHQ?: boolean;
 };
 
-/** Press features, linked from the PRESS button on the HQ page. */
-export const press: Resource[] = [
+/** Press features, grouped by outlet or theme. Linked from the PRESS button on the HQ page. */
+export const press: ResourceGroup[] = [
   {
-    label: "What a UCLA Acceptance REALLY Means: 3 Layers of UCLA",
-    href: "https://www.youtube.com/watch?v=zuTR5LFQvKE",
-    note: "YouTube, UCLA Alumni",
-  },
-  {
-    label: "UCLA Alumni Interview",
-    href: "https://www.instagram.com/reel/DXz9gDqD2sn/?igsh=NTc4MTIwNjQ2YQ==",
-    note: "Instagram Reel",
+    title: "UCLA",
+    items: [
+      {
+        label: "What a UCLA Acceptance REALLY Means: 3 Layers of UCLA",
+        href: "https://www.youtube.com/watch?v=zuTR5LFQvKE",
+        note: "YouTube, UCLA Alumni",
+      },
+      {
+        label: "UCLA Alumni Interview",
+        href: "https://www.instagram.com/reel/DXz9gDqD2sn/?igsh=NTc4MTIwNjQ2YQ==",
+        note: "Instagram Reel, UCLA Alumni",
+      },
+      {
+        label: "Sam didn't just study at UCLA, he showed up for it",
+        href: "https://www.linkedin.com/posts/ucla-alumni-association_sam-didnt-just-study-at-ucla-he-showed-ugcPost-7487899748646080514-0-C9",
+        note: "LinkedIn, UCLA Alumni Association",
+      },
+      {
+        label: "UCLA Alumni Feature",
+        href: "https://www.instagram.com/reel/DbV6Thtj6YL/?igsh=NTc4MTIwNjQ2YQ==",
+        note: "Instagram Reel, UCLA Alumni",
+      },
+    ],
   },
 ];
 
