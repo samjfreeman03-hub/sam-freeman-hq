@@ -97,6 +97,18 @@ export const press: PressGroup[] = [
       },
     ],
   },
+  {
+    slug: "interviews",
+    title: "Podcasts & Interviews",
+    tagline: "Long-form conversations on building FLAIR, MTRNM, and Stealth Labs.",
+    items: [
+      {
+        label: "From Club Promoter at 19 to Multi-Founder at 23 (Over $1M ARR)",
+        href: "https://youtu.be/OkBLSlABZg0",
+        note: "YouTube, Cole Hume",
+      },
+    ],
+  },
 ];
 
 export const personal = {
