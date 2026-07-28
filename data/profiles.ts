@@ -150,7 +150,7 @@ export const profiles: Profile[] = [
         name: "FLAIR Marketing Agency",
         tagline: "FLAIR's marketing practice",
         description:
-          "FLAIR's marketing arm — campaign work and next-generation activations.",
+          "FLAIR's marketing arm for campaign work and next-generation activations.",
         socials: [],
         resources: [],
         childrenLabel: "practices",
