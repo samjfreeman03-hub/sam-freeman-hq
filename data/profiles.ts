@@ -344,7 +344,7 @@ export const profiles: Profile[] = [
     website: { label: "stealth-labs.ai", href: "https://stealth-labs.ai" },
     cta: {
       label: "Want to invest? We are raising.",
-      href: "https://raise.stealth-labs.ai",
+      href: "/stealth-labs-investor-deck.pdf",
     },
     socials: [],
     logo: { src: "/logos/stealth-labs.png", bg: "#000000" },
