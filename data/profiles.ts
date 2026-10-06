@@ -366,6 +366,20 @@ export const profiles: Profile[] = [
       },
     ],
   },
+  {
+    slug: "techspace",
+    name: "TechSpace",
+    tagline: "Curated events for startups, VCs, and family offices.",
+    description:
+      "TechSpace curates high-impact events and experiences for startups, banks, VCs, and family offices through dinners, events, and conferences.",
+    website: { label: "techspace.vc", href: "https://techspace.vc" },
+    socials: [
+      { kind: "instagram", href: "https://www.instagram.com/techspace.vc/" },
+      { kind: "linkedin", href: "https://www.linkedin.com/company/tech-space-vc" },
+    ],
+    logo: { src: "/logos/techspace.png", bg: "#000000" },
+    resources: [],
+  },
 ];
 
 export function findPressGroup(slug: string): PressGroup | null {
