@@ -332,6 +332,10 @@ export const profiles: Profile[] = [
             label: "The Dead Sea, Amman, Jordan",
             href: "https://www.instagram.com/p/DNlM_CFoe_y/?igsh=NTc4MTIwNjQ2YQ==",
           },
+          {
+            label: "3,000 people in Çeşme, Turkey with &ME (Keinemusik)",
+            href: "https://www.instagram.com/p/Db_LrsZDLZF/?hl=en&img_index=1",
+          },
         ],
       },
     ],
