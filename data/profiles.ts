@@ -184,8 +184,8 @@ export const profiles: Profile[] = [
               {
                 items: [
                   {
-                    label: "FLAIR College/Next-Gen Deck",
-                    href: "https://www.canva.com/design/DAHEvvjMNbg/_a5bS2jeeb90KSqi1hSpPg/view?utm_content=DAHEvvjMNbg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hade886e86a",
+                    label: "FLAIR ALWAYS ON CAMPUS DECK",
+                    href: "https://canva.link/mdeo15oc79z6l3a",
                   },
                 ],
               },
